@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="zh-cmn-Hans">
+
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=640,minimum-scale=0.5,maximum-scale=1.0,user-scalable=no, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js"></script>
+    <link rel="shortcut icon" href="https://qingfeng-wiki.vercel.app/pics/ico.png" type="image/x-icon">
+    <title>清风wiki</title>
+    <style>
+        .img {
+            border: 3px solid rgb(46, 46, 46);
+        }
+    </style>
+</head>
+
+<body class="mdui-drawer-body-left" style="padding-top: 50px;">
+    <div class="mdui-drawer" id="drawer">
+        <p>&nbsp;</p>
+        <div class="mdui-container">
+            <img class="img" src="https://qingfeng-wiki.vercel.app/pics/ico.png" height="100" width="100" />
+            <div class="mdui-typo-headline-opacity">&nbsp;清风wiki</div>
+            </img>
+
+        </div>
+        <div>&nbsp;</div>
+
+        <div class="mdui-container" mdui-tab>
+            <ul class="mdui-list mdui-list-dense">
+                <li class="mdui-list-item " onclick="window.open('https://qingfeng-wiki.vercel.app/index.html')">
+                    <div class="mdui-list-item-content">主页</div>
+                </li>
+                <li class="mdui-list-item " onclick="window.open('https://qingfeng-wiki.vercel.app/about.html')">
+                    <div class="mdui-list-item-content">关于</div>
+                </li>
+                <li class="mdui-list-item " onclick="window.open('https://qingfeng-wiki.vercel.app/contact.html')">
+                    <div class="mdui-list-item-content">联系我们</div>
+                </li>
+                <li class="mdui-list-item " onclick="window.open('https://qingfeng-wiki.vercel.app/donate.html')">
+                    <div class="mdui-list-item-content">捐赠</div>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="mdui-container">
+        <div class="mdui-container">
+
+            <div class="mdui-valign">
+                <input class="mdui-textfield-input" name="url" type="text" id="url">
+                </form>
+                <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i value="test" class="mdui-icon material-icons" onClick="checkurl()" >search</i></a>
+            </div>
+
+        </div>
+
+        <script>
+            function checkurl() {
+                var url = document.getElementById("url").value;
+                window.open('https://qingfeng-wiki.vercel.app/wiki' + '/' + url + '.html');
+                return true;
+            }
+        </script>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+
+
+    </div>
+
+</body>
+
+</html>
