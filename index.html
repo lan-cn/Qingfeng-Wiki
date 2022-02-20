@@ -2,7 +2,7 @@
 <html lang="zh-cmn-Hans">
 
 <head>
-    <meta charset="UTF-8" name="viewport" content="width=640,minimum-scale=0.5,maximum-scale=1.0,user-scalable=no, initial-scale=1.0" />
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js"></script>
     <link rel="shortcut icon" href="https://qingfeng-wiki.vercel.app/pics/ico.png" type="image/x-icon">
@@ -11,12 +11,17 @@
         .img {
             border: 3px solid rgb(46, 46, 46);
         }
+        
+        .img3 {
+            border: 2px solid rgb(46, 46, 46);
+        }
     </style>
 </head>
 
-<body class="mdui-drawer-body-left" style="padding-top: 50px;">
-    <div class="mdui-drawer" id="drawer">
+<body class="mdui-bottom-nav-fixed " style="padding-top: 50px;">
+    <div class="mdui-drawer mdui-drawer-full-height mdui-drawer-close mdui-color-white" id="sidebar">
         <p>&nbsp;</p>
+
         <div class="mdui-container">
             <img class="img" src="https://qingfeng-wiki.vercel.app/pics/ico.png" height="100" width="100" />
             <div class="mdui-typo-headline-opacity">&nbsp;清风wiki</div>
@@ -41,59 +46,107 @@
                 </li>
             </ul>
         </div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <li class="mdui-typo-caption-opacity">切换页面源</li>
+        <div>&nbsp;</div>
+
+        <div class="mdui-container" mdui-tab>
+            <ul class="mdui-list mdui-list-dense">
+                <li class="mdui-list-item " onclick="a()">
+                    <div class="mdui-list-item-content">维基百科</div>
+                </li>
+                <li class="mdui-list-item " onclick="b()">
+                    <div class="mdui-list-item-content">维基百科镜像1</div>
+                </li>
+                <li class="mdui-list-item " onclick="c()">
+                    <div class="mdui-list-item-content">维基百科镜像2</div>
+                </li>
+                <li class="mdui-list-item " onclick="d()">
+                    <div class="mdui-list-item-content">百度百科</div>
+                </li>
+                <li class="mdui-list-item " onclick="e()">
+                    <div class="mdui-list-item-content">大英百科全书</div>
+                </li>
+            </ul>
+        </div>
+
     </div>
     <div class="mdui-container">
+        <div class="mdui-appbar  mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <button mdui-drawer="{target:'#sidebar',overlay:true,swipe:true}" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">menu</i> </button>
+                <div class="mdui-toolbar-spacer"></div>
+            </div>
+        </div>
+        <div>&nbsp;</div>
         <div class="mdui-container">
+
+            <div class="mdui-typo">
+                <pre><img class="img3" src="https://qingfeng-wiki.vercel.app/pics/ico.png" height="50" width="50" /><div class="mdui-typo-display-1">清风维基</div><div class="mdui-typo-subheading">一个公益性质的政治科普wiki</div></pre>
+            </div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
 
             <div class="mdui-valign">
                 <input class="mdui-textfield-input" name="url" type="text" id="url" placeholder="请直接输入你要查询的词条">
                 </form>
                 <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i value="test" class="mdui-icon material-icons" onClick="checkurl()" >search</i></a>
             </div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
 
-        </div>
 
-        <script>
-            function checkurl() {
-                var url = document.getElementById("url").value;
-                window.open('https://qingfeng-wiki.vercel.app/wiki' + '/' + url + '.html');
-                return true;
-            }
-        </script>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div class="mdui-container">
-
-            <div class="mdui-typo">
-                <pre><div class="mdui-typo-display-1">清风维基</div><div class="mdui-typo-subheading">一个公益性质的政治科普wiki</div></pre>
-            </div>
+            <script>
+                function checkurl() {
+                    var url = document.getElementById("url").value;
+                    window.open('https://qingfeng-wiki.vercel.app/wiki' + '/' + url + '.html');
+                    return true;
+                }
+            </script>
             <div>&nbsp;</div>
 
             <div class="mdui-typo">
-                <pre><div class="mdui-typo-display-1">文化大革命&nbsp;<button class="mdui-btn" onclick = "a()">维基百科</button><button class="mdui-btn" onclick = "b()">维基百科镜像1</button><button class="mdui-btn" onclick = "c()">维基百科镜像2</button><button class="mdui-btn" onclick = "d()">百度百科</button><button class="mdui-btn" onclick = "e()">大英百科全书</button></div>
+                <pre><div class="mdui-typo-display-1">文化大革命&nbsp;<div class="mdui-typo-caption-opacity">切换页面源请打开侧边栏</div></div>
 <iframe id = "wenge" src="https://zh.m.wikipedia.org/wiki/%E6%96%87%E5%8C%96%E5%A4%A7%E9%9D%A9%E5%91%BD#" width="100%" height="250"></iframe>
+            </div>            
+            <div>&nbsp;</div>
+            <div class="mdui-typo">
+<pre><div class="mdui-typo-display-1">八九学运&六四事件&nbsp;<div class="mdui-typo-caption-opacity">切换页面源请打开侧边栏</div></div>
+<iframe id = "liusi" src="https://zh.wikipedia.org/wiki/%E5%85%AD%E5%9B%9B%E4%BA%8B%E4%BB%B6" width="100%" height="250"></iframe>
             </div>
+
+
             <script type="text/javascript">
                 function a(){
                 var aa = document.getElementById("wenge");
                 aa.src = "https://zh.m.wikipedia.org/wiki/%E6%96%87%E5%8C%96%E5%A4%A7%E9%9D%A9%E5%91%BD#";
+                var aaa = document.getElementById("liusi");
+                aaa.src = "https://zh.wikipedia.org/wiki/%E5%85%AD%E5%9B%9B%E4%BA%8B%E4%BB%B6";
                 }
                 function b(){
                 var bb = document.getElementById("wenge");
                 bb.src = "https://en.wiki.hancel.org/wiki/Cultural_Revolution";
+                var bbb = document.getElementById("liusi");
+                bbb.src = "https://en.wiki.hancel.org/wiki/1989_Tiananmen_Square_protests_and_massacre";
                 }                
                 function c(){
                 var cc = document.getElementById("wenge");
                 cc.src = "https://en.jinzhao.wiki/wiki/Cultural_Revolution";
+                var ccc = document.getElementById("liusi");
+                ccc.src = "https://en.jinzhao.wiki/wiki/1989_Tiananmen_Square_protests_and_massacre";
                 }                
                 function d(){
                 var dd = document.getElementById("wenge");
                 dd.src = "https://baike.baidu.com/item/%E6%97%A0%E4%BA%A7%E9%98%B6%E7%BA%A7%E6%96%87%E5%8C%96%E5%A4%A7%E9%9D%A9%E5%91%BD/615661";
+                var ddd = document.getElementById("liusi");
+                ddd.src = "https://baike.baidu.com/item/1989%E5%B9%B4%E6%98%A5%E5%A4%8F%E4%B9%8B%E4%BA%A4%E7%9A%84%E6%94%BF%E6%B2%BB%E9%A3%8E%E6%B3%A2%EF%BC%881989%E5%B9%B44%E6%9C%88%E2%80%946%E6%9C%88%EF%BC%89/56667564?fr=aladdin";
                 }
                 function e(){
                 var ee = document.getElementById("wenge");
                 ee.src = "https://www.britannica.com/event/Cultural-Revolution";
+                var eee = document.getElementById("liusi");
+                eee.src = "https://www.britannica.com/event/Tiananmen-Square-incident";
                 }
                 </script>
         </div>

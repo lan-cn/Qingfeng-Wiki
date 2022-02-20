@@ -2,7 +2,7 @@
 <html lang="zh-cmn-Hans">
 
 <head>
-    <meta charset="UTF-8" name="viewport" content="width=640,minimum-scale=0.5,maximum-scale=1.0,user-scalable=no, initial-scale=1.0" />
+    <meta charset="UTF-8" name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js"></script>
     <link rel="shortcut icon" href="https://qingfeng-wiki.vercel.app/pics/ico.png" type="image/x-icon">
@@ -11,12 +11,17 @@
         .img {
             border: 3px solid rgb(46, 46, 46);
         }
+        
+        .img3 {
+            border: 2px solid rgb(46, 46, 46);
+        }
     </style>
 </head>
 
-<body class="mdui-drawer-body-left" style="padding-top: 50px;">
-    <div class="mdui-drawer" id="drawer">
+<body class="mdui-bottom-nav-fixed " style="padding-top: 50px;">
+    <div class="mdui-drawer mdui-drawer-full-height mdui-drawer-close mdui-color-white" id="sidebar">
         <p>&nbsp;</p>
+
         <div class="mdui-container">
             <img class="img" src="https://qingfeng-wiki.vercel.app/pics/ico.png" height="100" width="100" />
             <div class="mdui-typo-headline-opacity">&nbsp;清风wiki</div>
@@ -41,39 +46,69 @@
                 </li>
             </ul>
         </div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <li class="mdui-typo-caption-opacity">切换页面源</li>
+        <div>&nbsp;</div>
+
+        <div class="mdui-container" mdui-tab>
+            <ul class="mdui-list mdui-list-dense">
+                <li class="mdui-list-item " onclick="a()">
+                    <div class="mdui-list-item-content">维基百科</div>
+                </li>
+                <li class="mdui-list-item " onclick="b()">
+                    <div class="mdui-list-item-content">维基百科镜像1</div>
+                </li>
+                <li class="mdui-list-item " onclick="c()">
+                    <div class="mdui-list-item-content">维基百科镜像2</div>
+                </li>
+                <li class="mdui-list-item " onclick="d()">
+                    <div class="mdui-list-item-content">百度百科</div>
+                </li>
+                <li class="mdui-list-item " onclick="e()">
+                    <div class="mdui-list-item-content">大英百科全书</div>
+                </li>
+            </ul>
+        </div>
+
     </div>
     <div class="mdui-container">
+        <div class="mdui-appbar  mdui-shadow-0">
+            <div class="mdui-toolbar">
+                <button mdui-drawer="{target:'#sidebar',overlay:true,swipe:true}" class="mdui-btn mdui-btn-icon mdui-ripple"><i class="mdui-icon material-icons">menu</i> </button>
+                <div class="mdui-toolbar-spacer"></div>
+            </div>
+        </div>
+        <div>&nbsp;</div>
         <div class="mdui-container">
+
+            <div class="mdui-typo">
+                <pre><img class="img3" src="https://qingfeng-wiki.vercel.app/pics/ico.png" height="50" width="50" /><div class="mdui-typo-display-1">清风维基</div><div class="mdui-typo-subheading">一个公益性质的政治科普wiki</div></pre>
+            </div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
 
             <div class="mdui-valign">
                 <input class="mdui-textfield-input" name="url" type="text" id="url" placeholder="请直接输入你要查询的词条">
                 </form>
                 <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i value="test" class="mdui-icon material-icons" onClick="checkurl()" >search</i></a>
             </div>
+            <div>&nbsp;</div>
+            <div>&nbsp;</div>
 
-        </div>
 
-        <script>
-            function checkurl() {
-                var url = document.getElementById("url").value;
-                window.open('https://qingfeng-wiki.vercel.app/wiki' + '/' + url + '.html');
-                return true;
-            }
-        </script>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div>&nbsp;</div>
-        <div class="mdui-container">
-
-            <div class="mdui-typo">
-                <pre><div class="mdui-typo-display-1">清风维基</div><div class="mdui-typo-subheading">一个公益性质的政治科普wiki</div></pre>
-            </div>
+            <script>
+                function checkurl() {
+                    var url = document.getElementById("url").value;
+                    window.open('https://qingfeng-wiki.vercel.app/wiki' + '/' + url + '.html');
+                    return true;
+                }
+            </script>
             <div>&nbsp;</div>
 
             <div class="mdui-typo">
-                <pre><div class="mdui-typo-display-1">查询不到您要找什么捏，请缩小搜索范围捏</div></pre>
-            </div>
-
+                <pre><div class="mdui-typo-display-1">请缩小搜索范围捏，找不到捏</div>
+            </div>            
         </div>
     </div>
 
