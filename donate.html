@@ -5,10 +5,10 @@
     <meta charset="UTF-8" name="viewport" content="width=640,minimum-scale=0.5,maximum-scale=1.0,user-scalable=no, initial-scale=1.0" />
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/css/mdui.min.css" />
     <script src="https://cdn.jsdelivr.net/npm/mdui@1.0.2/dist/js/mdui.min.js"></script>
-    <link rel="shortcut icon" href="./pics/ico.png" type="image/x-icon">
+    <link rel="shortcut icon" href="https://qingfeng-wiki.vercel.app/pics/ico.png" type="image/x-icon">
     <title>清风wiki</title>
     <style>
-        img {
+        .img {
             border: 3px solid rgb(46, 46, 46);
         }
     </style>
@@ -18,12 +18,12 @@
     <div class="mdui-drawer" id="drawer">
         <p>&nbsp;</p>
         <div class="mdui-container">
-            <img class="mdui-img-fluid" src="./pics/ico.png" height="100" width="100" />
+            <img class="img" src="https://qingfeng-wiki.vercel.app/pics/ico.png" height="100" width="100" />
             <div class="mdui-typo-headline-opacity">&nbsp;清风wiki</div>
             </img>
 
         </div>
-        <p>&nbsp;</p>
+        <div>&nbsp;</div>
 
         <div class="mdui-container" mdui-tab>
             <ul class="mdui-list mdui-list-dense">
@@ -46,7 +46,7 @@
         <div class="mdui-container">
 
             <div class="mdui-valign">
-                <input class="mdui-textfield-input" name="url" type="text" id="url">
+                <input class="mdui-textfield-input" name="url" type="text" id="url" placeholder="请直接输入你要查询的词条">
                 </form>
                 <a href="javascript:;" class="mdui-btn mdui-btn-icon"><i value="test" class="mdui-icon material-icons" onClick="checkurl()" >search</i></a>
             </div>
@@ -60,6 +60,21 @@
                 return true;
             }
         </script>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div>&nbsp;</div>
+        <div class="mdui-container">
+
+            <div class="mdui-typo">
+                <pre><div class="mdui-typo-display-1">清风维基</div><div class="mdui-typo-subheading">一个公益性质的政治科普wiki</div></pre>
+            </div>
+            <div>&nbsp;</div>
+
+
+            <div class="mdui-typo">
+                <pre><div class="mdui-typo-display-1">都说公益性质了还捐什么捏</div></pre>
+            </div>
+        </div>
     </div>
 
 </body>
